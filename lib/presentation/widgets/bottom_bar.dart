@@ -23,10 +23,11 @@ class BottomBar extends StatelessWidget {
             sPadding,
       ),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(
-            sPadding,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(sPadding),
+            topRight: Radius.circular(sPadding),
           ),
         ),
         child: Row(

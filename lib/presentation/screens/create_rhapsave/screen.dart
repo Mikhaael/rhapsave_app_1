@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../../data/model/saving.dart';
 import '../../core/assets.dart';
 import '../../core/dimens.dart';
@@ -16,7 +17,7 @@ class CreateRhapsaveScreen extends StatelessWidget {
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(Assets.appBackground),
+              image: AssetImage(Assets.headerImage),
               fit: BoxFit.cover,
             ),
           ),
@@ -31,28 +32,25 @@ class CreateRhapsaveScreen extends StatelessWidget {
         ),
         title: Text(
           "Create Rhapsave",
-          style: theme.textTheme.bodyText1,
+          style: GoogleFonts.poppins(
+              fontWeight: FontWeight.w600, fontSize: 16, color: Colors.black),
         ),
         centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () => _addRhapsave(context),
-            icon: const Icon(
-              Icons.add_outlined,
-              color: Colors.black,
-            ),
-          )
-        ],
       ),
-      body: SafeArea(
-        child: ListView.separated(
-          shrinkWrap: true,
-          itemCount: testSavings.length,
-          itemBuilder: (_, i) => RhapsaveSavingsCard(testSavings[i]),
-          separatorBuilder: (_, __) => const SizedBox(
-            height: sSecondaryPadding,
-          ),
-          padding: const EdgeInsets.all(sPadding),
+      body: ListView.separated(
+        shrinkWrap: true,
+        itemCount: testSavings.length,
+        itemBuilder: (_, i) => RhapsaveSavingsCard(testSavings[i]),
+        separatorBuilder: (_, __) => const SizedBox(
+          height: sSecondaryPadding,
+        ),
+        padding: const EdgeInsets.all(sPadding),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _addRhapsave(context),
+        backgroundColor: theme.colorScheme.primary,
+        child: const Icon(
+          Icons.add_outlined,
         ),
       ),
     );

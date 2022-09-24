@@ -39,21 +39,22 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: ListView(
-          shrinkWrap: true,
-          children: [
-            const ProfileHeader(),
-            vSpace(sPadding),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: sPadding),
-              child: Column(
-                children:
-                    _items.map((item) => ProfileItem(item: item)).toList(),
-              ),
-            )
-          ],
-        ),
+      appBar: const PreferredSize(
+        preferredSize: Size(0, 0),
+        child: SizedBox(),
+      ),
+      body: ListView(
+        shrinkWrap: true,
+        children: [
+          const ProfileHeader(),
+          vSpace(sPadding),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: sPadding),
+            child: Column(
+              children: _items.map((item) => ProfileItem(item: item)).toList(),
+            ),
+          )
+        ],
       ),
     );
   }

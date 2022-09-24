@@ -13,6 +13,9 @@ const testSavings = [
       'Mortgage Savings': 50,
       'School Fees ': 20,
       'Christmas Savings': 15,
+      'Car Savngs': 50,
+      'Mortage Savings': 70,
+      'School fees': 20,
     },
   ),
   // RhapsaveSaving(

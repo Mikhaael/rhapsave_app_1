@@ -20,44 +20,57 @@ class _CreateRhapsaveModalState extends State<CreateRhapsaveModal> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return Padding(
-      padding: const EdgeInsets.all(sPadding),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Awesome',
-            style: sAwesomeTextStlye,
+    return Column(
+      children: [
+        vSpace(sSecondaryPadding / 2),
+        Container(
+          width: 60,
+          height: 5,
+          decoration: BoxDecoration(
+            color: Colors.grey[300],
+            borderRadius: BorderRadius.circular(sSecondaryPadding / 2),
           ),
-          Text(
-            'What percentage of your income would you like to save?',
-            style: sAwesomeTextStyle2,
-          ),
-          vSpace(sSecondaryPadding / 2),
-          SelectPercentage(
-            selected: _percent,
-            onValueChanged: (value) {
-              setState(() {
-                _percent = value;
-              });
-            },
-          ),
-          const SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: null,
-              child: Text('Enter Manually'),
+        ),
+        ListView(
+          shrinkWrap: true,
+          padding: const EdgeInsets.all(sPadding),
+          children: [
+            Text(
+              'Awesome',
+              style: sAwesomeTextStlye,
             ),
-          ),
-          vSpace(sSecondaryPadding / 2),
-          primaryButton(
-            text: 'Create Rhapsave',
-            onPressed: () {},
-            fillColor: const Color.fromRGBO(247, 79, 1, 1),
-            textColor: Colors.white,
-          )
-        ],
-      ),
+            vSpace(sSecondaryPadding / 2),
+            Text(
+              'What percentage of your income would you like to\nsave?',
+              style: sAwesomeTextStyle2,
+            ),
+            vSpace(sSecondaryPadding / 2),
+            SelectPercentage(
+              selected: _percent,
+              onValueChanged: (value) {
+                setState(() {
+                  _percent = value;
+                });
+              },
+            ),
+            vSpace(sSecondaryPadding / 2),
+            const SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: null,
+                child: Text('Enter Manually'),
+              ),
+            ),
+            vSpace(sSecondaryPadding / 2),
+            primaryButton(
+              text: 'Create Save',
+              onPressed: () {},
+              fillColor: const Color.fromRGBO(247, 79, 1, 1),
+              textColor: Colors.white,
+            )
+          ],
+        ),
+      ],
     );
   }
 }

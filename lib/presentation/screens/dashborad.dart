@@ -30,11 +30,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: IndexedStack(
-          index: _selectedIndex,
-          children: pages,
-        ),
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: pages,
       ),
       bottomNavigationBar: BottomBar(
         icons: items,

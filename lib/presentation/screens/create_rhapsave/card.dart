@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:intl/intl.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rhapsave_app/presentation/core/assets.dart';
 
 import '../../../data/model/saving.dart';
 import '../../core/dimens.dart';
@@ -13,6 +14,8 @@ import 'indicator.dart';
 //   name: 'NGN',
 //   locale: 'en_NG',
 // );
+
+final _amountFormatter = NumberFormat.currency(symbol: 'N', decimalDigits: 0);
 
 class RhapsaveSavingsCard extends StatelessWidget {
   final RhapsaveSaving _saving;
@@ -63,51 +66,49 @@ class RhapsaveSavingsCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Rhapsave',
+                        'Rhapsave Savings',
                         style: GoogleFonts.poppins(
-                          fontSize: 12,
+                          fontSize: 13,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
-                      vSpace(sSecondaryPadding / 2),
+                      // vSpace(sSecondaryPadding / 2),
                       Text(
-                        'N1,000,000',
+                        _amountFormatter.format(_saving.amount),
                         style: GoogleFonts.poppins(
                           wordSpacing: 2,
-                          fontSize: 24,
+                          fontSize: 28,
+                          letterSpacing: 3,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
                       Text(
                         'Save automatically towards several goals.',
                         style: GoogleFonts.poppins(
-                          fontSize: 8,
+                          fontSize: 10,
                           fontWeight: FontWeight.w400,
                         ),
                       )
                     ],
                   ),
-                  FittedBox(
+                  const FittedBox(
                     child: SizedBox(
                       width: 60,
                       height: 60,
-                      child: PieChart(
-                        PieChartData(
-                          borderData: FlBorderData(
-                            show: true,
-                          ),
-                          sectionsSpace: 0,
-                          centerSpaceRadius: sPadding / 2,
-                          sections: chartSections,
+                      child: Image(
+                        height: 12,
+                        image: AssetImage(
+                          Assets.pieChart,
                         ),
                       ),
                     ),
                   ),
                 ],
               ),
-              vSpace(sSecondaryPadding / 2),
+              vSpace(sSecondaryPadding),
               Wrap(
-                spacing: 0,
+                spacing: 3,
+                alignment: WrapAlignment.spaceAround,
                 children: _saving.savings.entries
                     .toList()
                     .asMap()
@@ -116,6 +117,7 @@ class RhapsaveSavingsCard extends StatelessWidget {
                       (e) => Indicator(
                         color: colors[e.key],
                         text: e.value.key,
+                        size: 8,
                       ),
                     )
                     .toList(),
