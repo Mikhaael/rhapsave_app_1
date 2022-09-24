@@ -53,7 +53,7 @@ class _CreateRhapsaveModalState extends State<CreateRhapsaveModal> {
           primaryButton(
             text: 'Create Rhapsave',
             onPressed: () {},
-            fillColor: const Color.fromRGBO(247, 79, 1, 2),
+            fillColor: const Color.fromRGBO(247, 79, 1, 1),
             textColor: Colors.white,
           )
         ],

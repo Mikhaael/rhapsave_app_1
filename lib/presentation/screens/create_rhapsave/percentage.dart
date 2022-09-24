@@ -62,7 +62,7 @@ class _PercentageItem extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           color: selected
-              ? theme.colorScheme.primary
+              ? const Color.fromRGBO(254, 141, 1, 1)
               : const Color.fromRGBO(178, 179, 179, 0.2),
           borderRadius: BorderRadius.circular(sSecondaryPadding / 2),
         ),

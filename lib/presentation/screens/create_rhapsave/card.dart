@@ -9,10 +9,10 @@ import '../../../data/model/saving.dart';
 import '../../core/dimens.dart';
 import 'indicator.dart';
 
-final _amountFormatter = NumberFormat.simpleCurrency(
-  name: 'NGN',
-  locale: 'en_NG',
-);
+// final _amountFormatter = NumberFormat.simpleCurrency(
+//   name: 'NGN',
+//   locale: 'en_NG',
+// );
 
 class RhapsaveSavingsCard extends StatelessWidget {
   final RhapsaveSaving _saving;
@@ -62,20 +62,28 @@ class RhapsaveSavingsCard extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Rhapsave Saving'),
+                      Text(
+                        'Rhapsave',
+                        style: GoogleFonts.poppins(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
                       vSpace(sSecondaryPadding / 2),
                       Text(
-                        _amountFormatter.format(_saving.amount),
-                        style:
-                            GoogleFonts.robotoTextTheme().headline5?.copyWith(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w700,
-                                ),
+                        'N1,000,000',
+                        style: GoogleFonts.poppins(
+                          wordSpacing: 2,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                       Text(
                         'Save automatically towards several goals.',
-                        style: theme.textTheme.caption?.copyWith(
-                            fontSize: 8, fontWeight: FontWeight.w400),
+                        style: GoogleFonts.poppins(
+                          fontSize: 8,
+                          fontWeight: FontWeight.w400,
+                        ),
                       )
                     ],
                   ),
