@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:rhapsave_app/presentation/core/buttons.dart';
+import 'package:rhapsave_app/presentation/core/styles.dart';
 
 import '../../core/dimens.dart';
 import 'percentage.dart';
@@ -22,12 +25,13 @@ class _CreateRhapsaveModalState extends State<CreateRhapsaveModal> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Awesome', style: theme.textTheme.headline4),
+          Text(
+            'Awesome',
+            style: sAwesomeTextStlye,
+          ),
           Text(
             'What percentage of your income would you like to save?',
-            style: theme.textTheme.headline5?.copyWith(
-              fontWeight: FontWeight.w500,
-            ),
+            style: sAwesomeTextStyle2,
           ),
           vSpace(sSecondaryPadding / 2),
           SelectPercentage(
@@ -46,15 +50,12 @@ class _CreateRhapsaveModalState extends State<CreateRhapsaveModal> {
             ),
           ),
           vSpace(sSecondaryPadding / 2),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text('Create Rhapsave'),
-            ),
-          ),
+          primaryButton(
+            text: 'Create Rhapsave',
+            onPressed: () {},
+            fillColor: const Color.fromRGBO(247, 79, 1, 2),
+            textColor: Colors.white,
+          )
         ],
       ),
     );

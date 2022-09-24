@@ -69,14 +69,13 @@ class RhapsaveSavingsCard extends StatelessWidget {
                         style:
                             GoogleFonts.robotoTextTheme().headline5?.copyWith(
                                   fontSize: 24,
-                                  fontWeight: FontWeight.w900,
+                                  fontWeight: FontWeight.w700,
                                 ),
                       ),
                       Text(
                         'Save automatically towards several goals.',
                         style: theme.textTheme.caption?.copyWith(
-                          fontSize: 8,
-                        ),
+                            fontSize: 8, fontWeight: FontWeight.w400),
                       )
                     ],
                   ),
@@ -100,7 +99,7 @@ class RhapsaveSavingsCard extends StatelessWidget {
               ),
               vSpace(sSecondaryPadding / 2),
               Wrap(
-                spacing: 4,
+                spacing: 0,
                 children: _saving.savings.entries
                     .toList()
                     .asMap()

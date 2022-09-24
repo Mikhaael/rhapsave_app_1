@@ -61,7 +61,9 @@ class _PercentageItem extends StatelessWidget {
           vertical: sSecondaryPadding / 2,
         ),
         decoration: BoxDecoration(
-          color: selected ? theme.colorScheme.primary : const Color(0x33B3B333),
+          color: selected
+              ? theme.colorScheme.primary
+              : const Color.fromRGBO(178, 179, 179, 0.2),
           borderRadius: BorderRadius.circular(sSecondaryPadding / 2),
         ),
         child: Text(
