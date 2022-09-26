@@ -18,13 +18,12 @@ const testSavings = [
       'School fees': 20,
     },
   ),
-  // RhapsaveSaving(
-  //   3000000,
-  //   {
-  //     'Laptop Purchase': 40,
-  //     'Rent Savings': 70,
-  //     'Transportation': 20,
-  //     'Christmas Savings': 15,
-  //   },
-  // ),
+  RhapsaveSaving(
+    3000000,
+    {
+      'Laptop Purchase': 40,
+      'Rent Savings': 70,
+      'Christmas Savings': 15,
+    },
+  ),
 ];
